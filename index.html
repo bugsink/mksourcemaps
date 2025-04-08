@@ -1,0 +1,26 @@
+<script
+  src="./bundle.tracing.min.js"
+></script>
+
+<script>
+  Sentry.init({
+    dsn: "http://880339a898794cb1995c9c3762e8a485@bugsink:8000/6",
+
+    // Alternatively, use `process.env.npm_package_version` for a dynamic release version
+    // if your build tool supports it.
+    release: "my-project-name@2.3.12",
+    integrations: [
+    ],
+
+    tracesSampleRate: 0,
+    replaysSessionSampleRate: 0.0,
+    replaysOnErrorSampleRate: 0.0,
+  });
+</script>
+
+<script src="./captureException.js">
+</script>
+
+<div onclick="captureException()">
+    <h1>Click me to test Sentry</h1>
+</div>
